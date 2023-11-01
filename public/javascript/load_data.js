@@ -107,4 +107,59 @@ let cargarTemperatura = () => {
 
 }
 
-cargarTemperatura();
+let cargarOpenMeteo = () => {
+
+  //URL que responde con la respuesta a cargar
+  let URL = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,relativehumidity_2m'; 
+  fetch(URL)
+    .then(responseText => responseText.json())
+    .then(responseJSON => {
+      
+      console.log(responseJSON);
+    
+      //Respuesta en formato JSON
+
+    //Referencia al elemento con el identificador plot
+    let plotRef = document.getElementById('plot1');
+
+    //Etiquetas del gráfico
+    let labels = responseJSON.hourly.time;
+
+    //Etiquetas de los datos
+    let data = responseJSON.hourly.temperature_2m;
+    let data2 = responseJSON.hourly.relativehumidity_2m;
+
+    //Objeto de configuración del gráfico
+    let config = {
+      type: 'line',
+      data: {
+        labels: labels, 
+        datasets: [
+          {
+            label: 'Temperature [2m]',
+            data: data, 
+          },
+          {
+            label: 'Relative Humedity [2m]',
+            data: data2,
+          }
+        ]
+      }
+
+    };
+
+    //Objeto con la instanciación del gráfico
+    let chart1  = new Chart(plotRef, config);
+
+  })
+  .catch(console.error);
+
+
+  }
+
+
+
+cargarOpenMeteo()
+cargarTemperatura()
+cargarPrecipitacion()
+cargarFechaActual()
