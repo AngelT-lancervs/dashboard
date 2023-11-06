@@ -1,0 +1,19 @@
+p-4 text-right bg-light{
+    display: flex;
+    flex-direction: row;
+    row-gap: 0.5rem; 
+    column-gap: 0.5rem; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+canvas{
+    flex-basis: 40%; 
+}
+
+.d-flex .justify-content-center .row-cols-1 .row-cols-md-1 .g-4 .mt-2 canvas {
+    flex-basis: 40%;
+}
+
+
