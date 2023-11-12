@@ -1,19 +1,105 @@
-p-4 text-right bg-light{
-    display: flex;
-    flex-direction: row;
-    row-gap: 0.5rem; 
-    column-gap: 0.5rem; 
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
+h1{
+    background-color: hwb(226 53% 18%);
+    color: #fdfdfd;
+    z-index: 100%;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    font-style: italic;
+    font-size: 3rem;
 }
 
 canvas{
-    flex-basis: 40%; 
+    height: 15rem !important;
+    max-height: 15rem;
+    border-right: solid 1px #168292;
+    border-left: solid 1px #168292;
+    padding: 1rem;
 }
 
-.d-flex .justify-content-center .row-cols-1 .row-cols-md-1 .g-4 .mt-2 canvas {
-    flex-basis: 40%;
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #544f57 !important;
+}
+
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Opcional, para distribuir los elementos uniformemente */
+    --mdb-navbar-hover-color: rgba(87, 163, 207, 0.7)!important;
+}
+
+.main-content {
+    margin-top: 80px; /* Ajusta la altura según tu barra de navegación */
+}
+
+a.nav-link{
+    display: flex;
+    color: #ffffff;
+    font-size: 1.3rem;
+    justify-content: center;
+    border-right: 2px solid #ffffff !important;
+    border-left: 2px solid #ffffff !important;
+}
+
+button.navbar-toggler.collapsed{
+    color: #ffffff;
+}
+
+li.nav-item{
+    flex-basis: 20% !important;
+}
+
+h4{
+    font-size: 3rem;
+}
+
+h6{
+    font-size: 1.4rem;
+}
+
+nav a {
+    width: 100%;
+    padding: 10px; /* Ajusta el relleno según tus necesidades */
+    margin: 0;
+    display: block; /* Esto hará que cada enlace sea un bloque completo */
+}
+
+section{
+    margin-bottom: 3rem;
+    border-bottom: solid 1px rgb(143, 140, 140);
+    padding: 1rem;
+}
+
+div.container{
+    padding-bottom: 2rem;
+}
+
+#indicadores{
+    margin-top: 3rem;
+}
+
+#precipitacion{
+    background-color: #94cbd4;
+}
+
+#uv{
+    background-color: rgb(243, 198, 0);
+}
+
+#temperatura{
+    background-color: #a1cfd6;
+}
+
+.list-group-light>.list-group-item{
+    padding: 1rem;    
+}
+
+#datos-section{
+    border: 0px;
 }
 
 
+.btn.btn-primary{
+    padding: 0.8rem;
+}

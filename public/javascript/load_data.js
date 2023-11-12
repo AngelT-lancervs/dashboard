@@ -150,7 +150,7 @@ let cargarOpenMeteo = () => {
           ]
         },
         options: {
-          responsive: true,
+          maintainAspectRatio: false,
         }
 
       };
@@ -191,19 +191,20 @@ let cargarOpenMeteo = () => {
           ]
         },
         options: {
-          responsive: true,
+          maintainAspectRatio: false,
         }
 
       };
 
       //Objeto con la instanciación del gráfico
-      let chart1 = new Chart(plotRef, config2);
+      let chart2 = new Chart(plotRef, config2);
 
     })
     .catch(console.error);
-
+  
 
 }
+
 
 cargarOpenMeteo()
 cargarTemperatura()
@@ -295,4 +296,6 @@ let loadForecastByCity = () => {
 
 }
 
-loadForecastByCity()
+loadForecastByCity();
+
+const botonActualizar = document.getElementById("botonActualizar");

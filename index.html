@@ -5,7 +5,7 @@
         <meta name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Dashboard</title>
+        <title>The Best Dashboard!</title>
 
         <!-- Font Awesome -->
         <link
@@ -26,6 +26,7 @@
     <body>
 
         <header>
+            <h1>FlashBoard</h1>
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
                 <div class="container-fluid">
@@ -68,7 +69,7 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3 mt-2">
                     <div class="col">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="precipitacion" >
                                 <h5 class="card-title">Precipitación</h5>
                                 <p class="card-text">
                                     <ul class="list-group list-group-light">
@@ -82,7 +83,7 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="uv" >
                                 <h5 class="card-title">Uv</h5>
                                 <p class="card-text">
                                     <ul class="list-group list-group-light">
@@ -96,7 +97,7 @@
                     </div>
                     <div class="col">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="temperatura">
                                 <h5 class="card-title">Temperatura</h5>
                                 <p class="card-text">
                                     <ul class="list-group list-group-light">
@@ -114,44 +115,45 @@
         <!-- Indicadores -->
 
         <!-- Gráficos -->
-  <section class="p-4 text-right bg-light">
-    <h4 id="graficos" class="mb-3">
-        Gráficos
-    </h4>
-    <div class="container">
-        <div
-            class="row d-flex justify-content-center row-cols-1 row-cols-md-1 g-4 mt-2">
-            <div class="col">
-                <canvas id="plot1"></canvas>
+        <section class="p-4 text-right bg-light">
+            <h4 id="graficos" class="mb-3">
+                Gráficos
+            </h4>
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <canvas id="plot1"></canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <canvas id="plot2"></canvas>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <canvas id="plot2"></canvas>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 <!-- Gráficos -->
  <!-- Datos -->
- <section class="p-4 text-right bg-light">
+ <section class="p-4 text-right bg-light" id="datos-section">
     <h4 id="datos" class="mb-3">
         Datos
     </h4>
     <div class="container">
 
-        <div
-            class="row justify-content-end row-cols-6 row-cols-md-6 g-3 mt-2">
-
-            <div class="col">
-                <select class="form-select form-select-lg mb-3"
-                    aria-label="Default select example">
-                    <option selected>Ciudades</option>
-                    <option value="Machala">Machala</option>
-                    <option value="Guayaquil">Guayaquil</option>
-                    <option value="Quito">Quito</option>
-                </select>
+        <div class="row row-cols-6 row-cols-md-6 g-3 mt-2">
+            <div class="col text-start">
+                <div class="input-group">
+                    <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+                        <option selected>Ciudades</option>
+                        <option value="Machala">Machala</option>
+                        <option value="Guayaquil">Guayaquil</option>
+                        <option value="Quito">Quito</option>
+                    </select>
+                </div>
             </div>
-
+            <div class="col text-end">
+                <button class="btn btn-primary" type="button" id="botonActualizar">Actualizar Datos</button>
+            </div>
         </div>
+
         <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
             <div class="col">
 
