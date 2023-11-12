@@ -298,4 +298,29 @@ let loadForecastByCity = () => {
 
 loadForecastByCity();
 
-const botonActualizar = document.getElementById("botonActualizar");
+let botonActualizar = document.getElementById("botonActualizar");
+
+botonActualizar.addEventListener("click", async () => {
+
+  // Handling event
+  let selectElement = document.querySelector("select");
+  let selectedCity = selectElement.value;
+
+  // Remove local storage entry
+  localStorage.removeItem(selectedCity);
+
+  try {
+    // API key
+    let APIkey = "fdafd5b1e200549eb6f7a0285b487f91";
+    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&mode=xml&appid=${APIkey}`;
+
+    let response = await fetch(url);
+    let responseText = await response.text();
+
+    await parseXML(responseText);
+    // Save the local storage entry
+    await localStorage.setItem(selectedCity, responseText);
+  } catch (error) {
+    console.log(error);
+  }
+});
