@@ -324,3 +324,25 @@ botonActualizar.addEventListener("click", async () => {
     console.log(error);
   }
 });
+
+let loadExternalTable = async () => {
+
+  //Requerimiento asíncrono
+  let url = 'https://www.gestionderiesgos.gob.ec/monitoreo-de-inundaciones/'
+  let proxyURL = 'https://cors-anywhere.herokuapp.com/'
+  let endpoint = proxyURL + url
+
+
+  let response = await fetch(endpoint)
+  let responseText = await response.text()
+
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(responseText, "text/html");
+
+  let table = xml.querySelector("#postcontent table")
+
+  document.getElementById("monitoreo").innerHTML = table.outerHTML
+
+ }
+ 
+ loadExternalTable()
