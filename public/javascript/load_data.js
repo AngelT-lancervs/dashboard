@@ -300,30 +300,19 @@ loadForecastByCity();
 
 let botonActualizar = document.getElementById("botonActualizar");
 
-botonActualizar.addEventListener("click", async () => {
-
-  // Handling event
-  let selectElement = document.querySelector("select");
-  let selectedCity = selectElement.value;
-
-  // Remove local storage entry
-  localStorage.removeItem(selectedCity);
-
-  try {
-    // API key
-    let APIkey = "fdafd5b1e200549eb6f7a0285b487f91";
-    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&mode=xml&appid=${APIkey}`;
-
-    let response = await fetch(url);
-    let responseText = await response.text();
-
-    await parseXML(responseText);
-    // Save the local storage entry
-    await localStorage.setItem(selectedCity, responseText);
-  } catch (error) {
-    console.log(error);
-  }
+botonActualizar.addEventListener("click", () => {
+  actualizarDatos();
 });
+
+let actualizarDatos = () => {
+  localStorage.clear();
+  let tableBody = document.querySelector("tbody");
+  tableBody.innerHTML = "";
+  let selectElement = document.querySelector("select");
+  selectElement.value = "Ciudades";
+};
+
+//GUIA 11
 
 let loadExternalTable = async () => {
 
@@ -346,3 +335,30 @@ let loadExternalTable = async () => {
  }
  
  loadExternalTable()
+
+ //reloj
+ function actualizarReloj() {
+  // Obtener la zona horaria del navegador del usuario
+  let zonaHorariaUsuario = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // Crear un objeto Date con la zona horaria deseada
+  let fecha = new Date();
+  let hora = fecha.getHours();
+  let minutos = fecha.getMinutes();
+  let segundos = fecha.getSeconds();
+
+  let segundosFormateados = segundos <= 9 ? `0${segundos}` : segundos;
+
+  // Actualizar el contenido del elemento con id "reloj"
+  let reloj = document.getElementById('reloj');
+  reloj.textContent = `Hora actual (${zonaHorariaUsuario}): ${hora}:${minutos}:${segundosFormateados}`;
+
+  if (hora % 3 == 0 && minutos == 0 && segundos == 0) {
+    actualizarDatos();
+  }
+}
+// Actualizar el reloj cada segundo
+setInterval(actualizarReloj, 1000);
+
+// Llamar a la función para mostrar la hora actual inmediatamente
+actualizarReloj();
