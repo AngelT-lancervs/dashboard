@@ -1,5 +1,6 @@
 import { tiempoArr, precipitacionArr, uvArr, temperaturaArr } from './static_data.js';
 
+
 let fechaActual = () => new Date().toISOString().slice(0, 10);
 
 let cargarPrecipitacion = () => {
@@ -302,6 +303,7 @@ let botonActualizar = document.getElementById("botonActualizar");
 
 botonActualizar.addEventListener("click", () => {
   actualizarDatos();
+  mostrarCargando();
 });
 
 let actualizarDatos = () => {
@@ -362,3 +364,12 @@ setInterval(actualizarReloj, 1000);
 
 // Llamar a la función para mostrar la hora actual inmediatamente
 actualizarReloj();
+
+//animacion
+function mostrarCargando() {
+  var cargandoOverlay = document.getElementById('cargando-overlay');
+  cargandoOverlay.style.display = 'flex'; // Muestra la superposición
+  setTimeout(function() {
+      cargandoOverlay.style.display = 'none'; // Oculta la superposición después de un tiempo (aquí puedes agregar tu lógica de actualización de datos)
+  }, 3000); // Ajusta el tiempo según tus necesidades
+}

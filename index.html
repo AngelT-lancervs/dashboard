@@ -24,7 +24,6 @@
             rel="stylesheet" />
     </head>
     <body>
-
         <header>
             <h1>FlashBoard</h1>
             <!-- Navbar -->
@@ -152,6 +151,9 @@
             <div class="col text-end">
                 <button class="btn btn-primary" type="button" id="botonActualizar">Actualizar Datos</button>
             </div>
+            <div id="cargando-overlay" class="cargando-overlay">
+                <div class="cargando-spinner"></div>
+            </div>
         </div>
 
         <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
@@ -216,5 +218,6 @@
         <!-- Load data -->
         <script type="module" src="public/javascript/load_data.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+        <script src="ldrs/ring.js"></script>
     </body>
 </html>
