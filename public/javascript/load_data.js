@@ -124,13 +124,18 @@ let cargarOpenMeteo = () => {
 
       //Referencia al elemento con el identificador plot
       let plotRef = document.getElementById('plot1');
-
+/*
       //Etiquetas del gráfico
       let labels = responseJSON.hourly.time;
 
       //Etiquetas de los datos
       let data = responseJSON.hourly.temperature_2m;
       let data2 = responseJSON.hourly.relativehumidity_2m;
+
+*/      
+      let labels = responseJSON.hourly.time.slice(0, 5);
+      let data = responseJSON.hourly.temperature_2m.slice(0, 5);
+      let data2 = responseJSON.hourly.relativehumidity_2m.slice(0, 5);
 
       //Objeto de configuración del gráfico
       let config = {
@@ -142,7 +147,9 @@ let cargarOpenMeteo = () => {
               borderColor: "red",
               label: 'Temperature [2m]',
               data: data,
+              borderWidth: 1,
             },
+            
             {
               borderColor: "blue",
               label: 'Relative Humedity [2m]',
@@ -151,7 +158,8 @@ let cargarOpenMeteo = () => {
           ]
         },
         options: {
-          maintainAspectRatio: false,
+          //maintainAspectRatio: false,
+
         }
 
       };
@@ -173,27 +181,41 @@ let cargarOpenMeteo = () => {
       let plotRef = document.getElementById('plot2');
 
       //Etiquetas del gráfico
-      let labels = responseJSON.hourly.time;
+      let labels = responseJSON.hourly.time.slice(0,5);
 
       //Etiquetas de los datos
-      let data = responseJSON.hourly.cloud_cover;
+      let data = responseJSON.hourly.cloud_cover.slice(0,5);
 
       //Objeto de configuración del gráfico
-      let config2 = {
+      const config2 = {
         type: 'line',
         data: {
           labels: labels,
           datasets: [
             {
-              borderColor: "green",
-              label: 'Cloud Cover',
+              borderColor: "black",
+              label: 'Cloudly [2m]',
               data: data,
+              fill: false,
+              borderWidth: 1,
+              pointStyle: 'rectRot',
+              pointRadius: 6,
+              pointBorderColor: 'rgb(0, 0, 0)'
             },
+            
           ]
         },
         options: {
-          maintainAspectRatio: false,
-        }
+          //maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: {
+                usePointStyle: true,
+              },
+            }
+          }
+        },
+        
 
       };
 

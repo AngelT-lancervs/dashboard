@@ -25,7 +25,7 @@
     </head>
     <body>
         <header>
-            <h1>FlashBoard</h1>
+            <h1><img src="public/img/flash.png">FlashBoard</h1>
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-white">
                 <div class="container-fluid">
@@ -50,6 +50,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#datos">Datos</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#monitoreo">Monitoreo</a>
+                            </li>
 
                         </ul>
                     </div>
@@ -60,7 +63,7 @@
 
         <!-- Indicadores -->
         <section class="p-4 text-right bg-light">
-            <h4 id="indicadores" class="mb-3">
+            <img src="public/img/indicadores.png"><h4 id="indicadores" class="mb-3">
                 Indicadores 
             </h4>
             <h6 class="mb-3">YYYY-MM-DD</h6>
@@ -115,7 +118,7 @@
 
         <!-- Gráficos -->
         <section class="p-4 text-right bg-light">
-            <h4 id="graficos" class="mb-3">
+            <img src="public/img/graficos.png"><h4 id="graficos" class="mb-3">
                 Gráficos
             </h4>
             <div class="container">
@@ -132,7 +135,7 @@
 <!-- Gráficos -->
  <!-- Datos -->
  <section class="p-4 text-right bg-light" id="datos-section">
-    <h4 id="datos" class="mb-3">
+    <img src="public/img/datos.png"><h4 id="datos" class="mb-3">
         Datos
     </h4>
     <div class="container">
@@ -190,10 +193,10 @@
 <!-- Datos -->
 
   <!-- Tabla de mareas -->
-  <section class="p-4 text-right bg-light">
-    <h4 class="mb-3">
+  <section class="p-4 text-right bg-light" id="monitoreo">
+    <img src="public/img/monitoreo.png"><h4 class="mb-3" id="titulo4">
         Mapa de monitoreo de amenaza de inundaciones bajo pronóstico de precipitaciones
-    </h4>
+    </h4> 
     <div class="container">
         <div class="row row-cols-1 row-cols-md-1 g-3 mt-2">
             <div class="col">
@@ -208,6 +211,10 @@
 </section>
 <!-- Tabla de mareas -->
 
+<div class="p-4 text-right bg-light">
+    <h5>Icon Source: </p><a href="https://www.flaticon.es/" title="flaticon">FlatIcon</a>
+    </div>
+
         <!-- MDB -->
         <script
             type="text/javascript"
@@ -220,4 +227,8 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
         <script src="ldrs/ring.js"></script>
     </body>
+    <footer class="p-4 text-right">
+        <span class="copyright">Copyright © 2023 Angel Tomalá - lancervs</span>
+    </footer>
+
 </html>

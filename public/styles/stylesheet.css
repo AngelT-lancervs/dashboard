@@ -9,6 +9,17 @@ h1{
     font-size: 3rem;
 }
 
+#titulo4{
+    font-size: 1.8rem;
+}
+
+h1 img{
+    width: 100px;
+    height: 100px;
+    margin-right: 2rem;
+
+}
+
 canvas{
     height: 15rem !important;
     max-height: 15rem;
@@ -44,8 +55,7 @@ a.nav-link{
     color: #ffffff;
     font-size: 1.3rem;
     justify-content: center;
-    border-right: 2px solid #ffffff !important;
-    border-left: 2px solid #ffffff !important;
+    
 }
 
 button.navbar-toggler.collapsed{
@@ -64,6 +74,7 @@ h4{
 
 h6{
     font-size: 1rem;
+    margin-left: 8rem;
 }
 
 nav a {
@@ -241,3 +252,22 @@ img {
     100% { transform: rotate(360deg); }
 }
 
+img{
+    width: 75px;
+    height: 75px;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+h5{
+    margin-bottom: 1rem !important;
+}
+
+footer{
+    background-color: #20295C !important;
+}
+
+footer span{
+    color: #ffffff;
+}
