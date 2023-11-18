@@ -372,10 +372,12 @@ let loadExternalTable = async () => {
   let segundos = fecha.getSeconds();
 
   let segundosFormateados = segundos <= 9 ? `0${segundos}` : segundos;
+  let horasFormateadas = hora <= 9 ? `0${hora}` : hora;
+  let minutosFormateados = minutos <= 9 ? `0${minutos}` : minutos;
 
   // Actualizar el contenido del elemento con id "reloj"
   let reloj = document.getElementById('reloj');
-  reloj.textContent = `Hora actual (${zonaHorariaUsuario}): ${hora}:${minutos}:${segundosFormateados}`;
+  reloj.textContent = `Hora actual (${zonaHorariaUsuario}): ${horasFormateadas}:${minutosFormateados}:${segundosFormateados}`;
 
   if (hora % 3 == 0 && minutos == 0 && segundos == 0) {
     actualizarDatos();
